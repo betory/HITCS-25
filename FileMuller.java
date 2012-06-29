@@ -1,4 +1,4 @@
-//: 文件粉碎机
+//文件粉碎机
 
 import java.awt.*;
 import java.io.*;
@@ -28,7 +28,7 @@ public class FileMuller extends Frame
 	public FileMuller()
 	{
 		setTitle("文件粉碎机");
-		//加入文本框，以显示文件名、路径
+		//加入文本框显示文件名、路径
 		directory.setEditable(false);
 		filename.setEditable(false);
 		Panel p = new Panel();
@@ -39,7 +39,7 @@ public class FileMuller extends Frame
 		p.add(filename);
 		p.add(directory);
 		add("North", p);
-		//加入文本显示区域，试图显示文件信息
+		//加入文本显示区域显示文件信息
 		p = new Panel();
 		p.setLayout(new GridLayout(1, 1));
 		p.add(info);
@@ -56,7 +56,7 @@ public class FileMuller extends Frame
 	}
 
 	//选择文件子窗口
-	FileDialog d = new FileDialog(this, "请选择您想要粉碎的文件");//创建子窗口实例对象d
+	FileDialog d = new FileDialog(this, "请选择您想要粉碎的文件");//创建子窗口实例对象
 
 	String is;
 
@@ -78,14 +78,14 @@ public class FileMuller extends Frame
 	private final static long adder = 0xBL;
 
 	private final static long mask = (1L << 48) - 1;
-
+	
 	//事件处理：
 	//主窗口退出功能
 	public boolean handleEvent(Event evt)
 	{
 		if (evt.id == Event.WINDOW_DESTROY)
 			//System.exit(0);
-			this.dispose();	//释放框架资源，我觉得这比上面那条退出语句效果好
+			this.dispose();	//释放框架资源
 		else
 			return super.handleEvent(evt);
 		return true;
